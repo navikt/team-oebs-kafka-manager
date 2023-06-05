@@ -1,6 +1,6 @@
 # team-oebs-kafka-manager
 
-Applikasjon for håndtering av Kafka topics. For u1: https://team-oebs-u1-kafka-manager.dev.intern.nav.no/index.html (om man får 404 så slette cookies og logg på igjen)
+Applikasjon for håndtering av Kafka topics. For u1: https://team-oebs-u1-kafka-manager.intern.dev.nav.no/index.html (om man får 404 så slette cookies og logg på igjen)
 
 Kan f.eks brukes for å hente ut meldinger, offsets på consumer, offsets på siste melding eller sette consumer offsets. [kafka-manager](https://github.com/navikt/kafka-manager)
 
