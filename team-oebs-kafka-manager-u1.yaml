@@ -46,7 +46,13 @@ spec:
           {
             "topics": [
               {
-                "name": "teammelosys.faktura-bestilt.v1-u1",
+                "name": "teammelosys.faktura-bestilt.v1-q1",
+                "location": "AIVEN",
+                "keyDeserializerType": "STRING",
+                "valueDeserializerType": "STRING"
+              },
+              {
+                "name": "teammelosys.faktura-bestilt.v1-q2",
                 "location": "AIVEN",
                 "keyDeserializerType": "STRING",
                 "valueDeserializerType": "STRING"
