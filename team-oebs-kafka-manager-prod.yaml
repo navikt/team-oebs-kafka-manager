@@ -1,7 +1,7 @@
 kind: Application
 apiVersion: nais.io/v1alpha1
 metadata:
-  name: team-oebs-kafka-manager-u1
+  name: team-oebs-kafka-manager-q1
   namespace: team-oebs
   labels:
     team: team-oebs
@@ -10,7 +10,7 @@ spec:
   port: 8080
   webproxy: true
   ingresses:
-    - https://team-oebs-u1-kafka-manager.intern.dev.nav.no
+    - https://team-oebs-kafka-manager.intern.nav.no
   prometheus:
     enabled: true
     path: /internal/prometheus
@@ -37,34 +37,34 @@ spec:
       tenant: nav.no
       claims:
         groups:
-          - id: d6a9b16c-d8c6-48de-9b16-b6a814e60e1a # team-oebs object Id i ad
+          - id: d6a9b16c-d8c6-48de-9b16-b6a814e60e1a # team-oebs object Id i
   kafka: # Optional. Required for Aiven
-    pool: nav-dev
+    pool: nav-prod
   env:
     - name: APP_CONFIG_JSON # Required
       value: >
           {
             "topics": [
               {
-                "name": "teammelosys.faktura-bestilt.v1-q1",
+                "name": "teammelosys.faktura-bestilt.v1",
                 "location": "AIVEN",
                 "keyDeserializerType": "STRING",
                 "valueDeserializerType": "STRING"
               },
               {
-                "name": "teammelosys.faktura-bestilt.v1-q2",
+                "name": "teammelosys.faktura-bestilt.v1",
                 "location": "AIVEN",
                 "keyDeserializerType": "STRING",
                 "valueDeserializerType": "STRING"
               },
               {
-                "name": "team-oebs.faktura-status.v1-u1",
+                "name": "team-oebs.faktura-status.v1",
                 "location": "AIVEN",
                 "keyDeserializerType": "STRING",
                 "valueDeserializerType": "STRING"
               },
               {
-                "name": "team-oebs.faktura-import-dlq.v1-u1",
+                "name": "team-oebs.faktura-import-dlq.v1",
                 "location": "AIVEN",
                 "keyDeserializerType": "STRING",
                 "valueDeserializerType": "STRING"
