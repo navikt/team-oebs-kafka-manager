@@ -1,0 +1,73 @@
+kind: Application
+apiVersion: nais.io/v1alpha1
+metadata:
+  name: team-oebs-kafka-manager-u1
+  namespace: team-oebs
+  labels:
+    team: team-oebs
+spec:
+  image: ghcr.io/navikt/kafka-manager/kafka-manager:2.2022.06.28_10.32-8669b1a0d98c
+  port: 8080
+  webproxy: true
+  ingresses:
+    - https://team-oebs-u1-kafka-manager.intern.dev.nav.no
+  prometheus:
+    enabled: true
+    path: /internal/prometheus
+  readiness:
+    path: /internal/health/readiness
+    initialDelay: 20
+  liveness:
+    path: /internal/health/liveness
+    initialDelay: 20
+  replicas:
+    min: 1
+    max: 1  # 1 instance is required since in-memory session management is used
+    cpuThresholdPercentage: 75
+  resources:
+    limits:
+      cpu: "1"
+      memory: 1024Mi
+    requests:
+      cpu: 250m
+      memory: 512Mi
+  azure: # Required
+    application:
+      enabled: true
+      tenant: nav.no
+      claims:
+        groups:
+          - id: d6a9b16c-d8c6-48de-9b16-b6a814e60e1a # team-oebs object Id i ad
+  kafka: # Optional. Required for Aiven
+    pool: nav-dev
+  env:
+    - name: APP_CONFIG_JSON # Required
+      value: >
+          {
+            "topics": [
+              {
+                "name": "teammelosys.faktura-bestilt.v1-q1",
+                "location": "AIVEN",
+                "keyDeserializerType": "STRING",
+                "valueDeserializerType": "STRING"
+              },
+              {
+                "name": "teammelosys.faktura-bestilt.v1-q2",
+                "location": "AIVEN",
+                "keyDeserializerType": "STRING",
+                "valueDeserializerType": "STRING"
+              },
+              {
+                "name": "team-oebs.faktura-status.v1-t1",
+                "location": "AIVEN",
+                "keyDeserializerType": "STRING",
+                "valueDeserializerType": "STRING"
+              },
+              {
+                "name": "team-oebs.faktura-import-dlq.v1-u1",
+                "location": "AIVEN",
+                "keyDeserializerType": "STRING",
+                "valueDeserializerType": "STRING"
+              }
+            ]
+          }
