@@ -52,12 +52,6 @@ spec:
                 "valueDeserializerType": "STRING"
               },
               {
-                "name": "teammelosys.faktura-bestilt.v1",
-                "location": "AIVEN",
-                "keyDeserializerType": "STRING",
-                "valueDeserializerType": "STRING"
-              },
-              {
                 "name": "team-oebs.faktura-status.v1",
                 "location": "AIVEN",
                 "keyDeserializerType": "STRING",
