@@ -1,7 +1,7 @@
 kind: Application
 apiVersion: nais.io/v1alpha1
 metadata:
-  name: team-oebs-kafka-manager-u1
+  name: team-oebs-kafka-manager-t1
   namespace: team-oebs
   labels:
     team: team-oebs
@@ -10,7 +10,7 @@ spec:
   port: 8080
   webproxy: true
   ingresses:
-    - https://team-oebs-u1-kafka-manager.intern.dev.nav.no
+    - https://team-oebs-t1-kafka-manager.intern.dev.nav.no
   prometheus:
     enabled: true
     path: /internal/prometheus
