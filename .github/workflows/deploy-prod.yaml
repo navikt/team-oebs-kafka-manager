@@ -2,7 +2,7 @@ name: Build, push and deploy til prod-gcp
 on: 
   push:
     paths:
-      - 'deploy/kafka/team-oebs-kafka-manager-prod.yaml'
+      - 'kafka/team-oebs-kafka-manager-prod.yaml'
   workflow_dispatch:
 
 jobs:

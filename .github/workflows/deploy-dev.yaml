@@ -2,9 +2,9 @@ name: Build, push and deploy til dev-gcp
 on: 
   push:
     paths:
-      - 'deploy/kafka/team-oebs-kafka-manager-t1.yaml'
-      - 'deploy/kafka/team-oebs-kafka-manager-q1.yaml'
-      - 'deploy/kafka/team-oebs-kafka-manager-u1.yaml'
+      - 'kafka/team-oebs-kafka-manager-t1.yaml'
+      - 'kafka/team-oebs-kafka-manager-q1.yaml'
+      - 'kafka/team-oebs-kafka-manager-u1.yaml'
   workflow_dispatch:
 
 jobs:
