@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          team: team-oebs
           path: deploy
       - name: Deploy kafka-manager-t1 to dev-fss
         uses: nais/deploy/actions/deploy@v2
@@ -28,6 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          team: team-oebs
           path: deploy
       - name: Deploy kafka-manager-q1 to dev-fss
         uses: nais/deploy/actions/deploy@v2
@@ -42,6 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          team: team-oebs
           path: deploy
       - name: Deploy kafka-manager-u1 to dev-fss
         uses: nais/deploy/actions/deploy@v2
