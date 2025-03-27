@@ -2,8 +2,11 @@ name: Build, push and deploy til dev-fss
 on: 
   push:
     paths:
-      - 'Dockerfile'
-      - 'deploy/.nais/dev.yaml'
+      - 'deploy/kafka/team-oebs-kafka-manager-t1.yaml'
+      - 'deploy/kafka/team-oebs-kafka-manager-q1.yaml'
+      - 'deploy/kafka/team-oebs-kafka-manager-u1.yaml'
+  workflow_dispatch:
+  
 jobs:
   deploy-t1:
     runs-on: ubuntu-latest
@@ -17,4 +20,4 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-fss
-          RESOURCE: deploy/.nais/team-oebs-kafka-manager-t1.yaml
+          RESOURCE: deploy/kafka/team-oebs-kafka-manager-t1.yaml

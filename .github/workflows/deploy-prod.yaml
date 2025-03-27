@@ -2,8 +2,9 @@ name: Build, push and deploy til prod-fss
 on: 
   push:
     paths:
-      - 'Dockerfile'
-      - 'deploy/.nais/prod.yaml'
+      - 'deploy/kafka/team-oebs-kafka-manager-prod.yaml'
+  workflow_dispatch:
+  
 jobs:
   deploy-prod:
     runs-on: ubuntu-latest
