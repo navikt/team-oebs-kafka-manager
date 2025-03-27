@@ -1,4 +1,4 @@
-name: Build, push and deploy til dev-gcp
+name: Build, push and deploy til dev-fss
 on: 
   push:
     paths:
@@ -15,11 +15,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: deploy
-      - name: Deploy kafka-manager-t1 to dev-gcp
+      - name: Deploy kafka-manager-t1 to dev-fss
         uses: nais/deploy/actions/deploy@v2
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-gcp
+          CLUSTER: dev-fss
           RESOURCE: deploy/kafka/team-oebs-kafka-manager-t1.yaml
 
   deploy-q1:
@@ -29,11 +29,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: deploy
-      - name: Deploy kafka-manager-q1 to dev-gcp
+      - name: Deploy kafka-manager-q1 to dev-fss
         uses: nais/deploy/actions/deploy@v2
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-gcp
+          CLUSTER: dev-fss
           RESOURCE: deploy/kafka/team-oebs-kafka-manager-q1.yaml
 
   deploy-u1:
@@ -43,9 +43,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: deploy
-      - name: Deploy kafka-manager-u1 to dev-gcp
+      - name: Deploy kafka-manager-u1 to dev-fss
         uses: nais/deploy/actions/deploy@v2
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-gcp
+          CLUSTER: dev-fss
           RESOURCE: deploy/kafka/team-oebs-kafka-manager-u1.yaml
