@@ -1,10 +1,10 @@
-name: Build, push and deploy til prod-fss
+name: Build, push and deploy til prod-gcp
 on: 
   push:
     paths:
       - 'deploy/kafka/team-oebs-kafka-manager-prod.yaml'
   workflow_dispatch:
-  
+
 jobs:
   deploy-prod:
     runs-on: ubuntu-latest
@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: deploy
-      - name: Deploy to prod-fss
+      - name: Deploy to prod-gcp
         uses: nais/deploy/actions/deploy@v2
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: prod-fss
+          CLUSTER: prod-gcp
           RESOURCE: deploy/.nais/prod.yaml
