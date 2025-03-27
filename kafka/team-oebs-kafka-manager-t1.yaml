@@ -38,7 +38,7 @@ spec:
       claims:
         groups:
           - id: d6a9b16c-d8c6-48de-9b16-b6a814e60e1a # team-oebs object Id i ad
-  kafka: # Optional. Required for Aiven
+  kafka: # Optional. Required for Aivenn
     pool: nav-dev
   env:
     - name: APP_CONFIG_JSON # Required
