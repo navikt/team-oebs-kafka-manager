@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy docker image to dev
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           team: team-oebs
           path: deploy
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy docker image to dev
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           team: team-oebs
           path: deploy
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy docker image to dev
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           team: team-oebs
           path: deploy
