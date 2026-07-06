@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy docker image to prod
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           path: deploy
       - name: Deploy to prod-fss
