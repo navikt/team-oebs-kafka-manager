@@ -1,6 +1,17 @@
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/.github/workflows"
+  - package-ecosystem: github-actions
+    directory: "/"
     schedule:
-      interval: "weekly"
+      interval: daily
+      time: "10:00"
+      timezone: "Europe/Oslo"
+    groups:
+      github-actions-dependencies:
+        patterns:
+          - "*"
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 10
+    reviewers:
+      - navikt/oebs-java-dev
